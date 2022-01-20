@@ -1,11 +1,15 @@
 import "./styles.css";
 import Card from "../src/components/Card";
 import contacts from "./contacts";
+import Avatar from "./components/Avatar";
 
 export default function App() {
   return (
     <div className="App">
       <h1 className="heading">My Contacts</h1>
+      <Avatar
+      img="https://i.ibb.co/k8wN1k7/MIL-0637-removebg-preview-1.png"
+      />
       <Card
         name={contacts[0].name}
         img={contacts[0].imgUrl}
