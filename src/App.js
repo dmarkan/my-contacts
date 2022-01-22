@@ -3,6 +3,18 @@ import Card from "../src/components/Card";
 import contacts from "./contacts";
 import Avatar from "./components/Avatar";
 
+function createCard(contact) {
+  return (
+  <Card
+  key={contact.id}
+  name={contact.name}
+  img={contact.imgUrl}
+  tel={contact.phone}
+  email={contact.email}
+  />
+  );
+}
+
 export default function App() {
   return (
     <div className="App">
@@ -10,7 +22,8 @@ export default function App() {
       <Avatar
       img="https://i.ibb.co/k8wN1k7/MIL-0637-removebg-preview-1.png"
       />
-      <Card
+      {contacts.map(createCard)}
+      {/* <Card
         name={contacts[0].name}
         img={contacts[0].imgUrl}
         tel={contacts[0].phone}
@@ -27,7 +40,7 @@ export default function App() {
         img={contacts[2].imgUrl}
         tel={contacts[2].phone}
         email={contacts[2].email}
-      />
+      /> */}
     </div>
   );
 }
